@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  @media (max-width:1000px) {
+    .hero {
+      background-image: url(/hero/hero.png);
+      @apply bg-contain bg-no-repeat
+    }
+  }
+  .hero {
+    background-image: url(/hero/hero.png);
+    @apply bg-cover bg-no-repeat bg-center
+  }
+  .news {
+    background-image: url(/new.jpg);
+    @apply bg-cover bg-no-repeat bg-top bg-fixed
+  }
+  .footer{
+    background-image: url(/footer/footer-bg.png);
+    @apply bg-cover bg-no-repeat bg-center
+  }
+}
+@layer components {
+  *,
+*::after,
+*::after{
+  @apply m-0 p-0 box-border
+}
+.fh::before {
+  content: "";
+  height: 2px;
+  @apply left-0 bg-red-400 w-12 -bottom-2 absolute
+ 
+
+}
+  ul{
+    @apply list-none
+  }
+}
+a{
+  text-decoration: none;
+}
+.ts {
+  text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000,
+				-1px -1px 0 #000;
+        color: white;
+}
+::selection{
+  background-color: rgb(243, 113, 113);
+  color: white;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +67,4 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
